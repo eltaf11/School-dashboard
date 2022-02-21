@@ -9,6 +9,7 @@ class DashboardController extends Controller
 {
     public function Show()
     {
+
         $students = User::all();
         return view('dashboard.dashboard' , ['students' => $students]);
     }

@@ -28,7 +28,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/logout' , [LogoutController::class, 'Logout']);
 });
 
-Route::prefix('dashboard')->group(function (){
+Route::prefix('dashboard')->middleware('auth')->group(function (){
 
     Route::get('/' , [DashboardController::class,'Show']);
     Route::get('/admin' , [DashboardController::class,'admin']);

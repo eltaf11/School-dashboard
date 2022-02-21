@@ -42,7 +42,7 @@
 </style>
 
 <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow" style="background-color: #282d32 !important; height: 100px; text-align: center !important;">
-    <a class="navbar-brand col-sm-12 col-md-12 mr-0" href="#" style="background-color: #282d32">My Dashboard</a>
+    <a class="navbar-brand col-sm-10 col-md-12 mr-0" style="text-align: left; background-color: #282d32; padding-left: 50px"><h2>My Dashboard</h2></a>
 
 
 
@@ -54,29 +54,31 @@
 <div class="container-fluid">
     <br><br><br><br><br><br>
 
-        <main role="main" class="col-md-12 ml-sm-auto col-lg-12 px-4">
+        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-2">
             <!-- information cards -->
+            <h3 style="border-bottom: 2px solid black">Welcome to Dashboard</h3>
+            <br>
             <div class="row">
-                <div class="col-xl-4 col-sm-6 col-12 d-flex">
-                    <div style="text-align: center;  height:100px; border-radius: 30px 4px 30px 4px; background-color: #e2e1fe" class="card bg-four w-100">
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div style="text-align: center;  height:100px; border-radius: 2px;background-color: #282d32 " class="card bg-four w-100">
                         <div class="card-body">
-                            <h2><a href="" style="text-decoration: none; color:black;  ">Student</a></h2>
+                            <h2><a href="" style="text-decoration: none; color:white; ">Student</a></h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-sm-6 col-12 d-flex">
-                    <div style="border-radius: 30px 4px 30px 4px; background-color: #e2e1fe" class="card bg-four w-100">
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div style="border-radius: 2px; ; background-color: #282d32 " class="card bg-four w-100">
                         <div class="card-body" style="text-align: center">
-                            <h2><a href="" style="text-decoration: none; color:black; ">Teacher</a></h2>
+                            <h2><a href="" style="text-decoration: none; color:white; ">Teacher</a></h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-sm-6 col-12 d-flex">
-                    <div style="border-radius: 30px 4px 30px 4px; background-color: #e2e1fe" class="card bg-four w-100">
+                <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                    <div style="border-radius: 2px; background-color: #282d32 " class="card bg-four w-100">
                         <div class="card-body" style="text-align: center">
-                            <h2><a href="/dashboard/admin" style="text-decoration: none; color:black;">Admin</a></h2>
+                            <h2><a href="/dashboard/admin" style="text-decoration: none; color:white;">Admin</a></h2>
                         </div>
                     </div>
                 </div>
