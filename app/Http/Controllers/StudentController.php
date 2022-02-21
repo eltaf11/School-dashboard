@@ -41,7 +41,7 @@ class StudentController extends Controller
         return view('dashboard.students.list', ['studs' => $studs]);
     }
 
-    public function edit_show(Reques $request , $id)
+    public function edit_show($id)
     {
         $test = User::with('id' , $id)->first();
         return view('dashboard.students.edit' , ['test' => $test]);
