@@ -84,7 +84,7 @@
     <a href="#about">About</a>
     @if(Route::has('login'))
         @auth
-            <a style="padding-left: 303px;" class="" href="/logout">Logout</a>
+            <a style="padding-left: 260px;" class="" href="/logout">Logout</a>
         @else
             <a class="login" href='login'>Login</a>
             @if(Route::has('register'))

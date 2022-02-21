@@ -37,12 +37,10 @@ class RegisterController extends Controller
      */
     public function Register(RegisterRequest $request)
     {
-
         $validated = $request->validated();
-
         User::create($validated);
         $request->session()->regenerate();
-        return redirect('/')->with('success', "Successful");
+        return redirect('/')->with('success', "Register Successful. Please Login");
 
     }
 
