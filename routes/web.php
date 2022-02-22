@@ -23,16 +23,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get ('/home' , function (){return view('home');});
     Route::get ('/register', [RegisterController::class, 'Show']);
     Route::post('/register', [RegisterController::class, 'Register'])->name('register');
-    Route::get ('/login' , [LoginController::class, 'Show']);
-    Route::post('/login' , [LoginController::class, 'Login'])->name('login');
-    Route::get ('/logout' , [LogoutController::class, 'Logout']);
+    Route::get ('/login'   , [LoginController::class,    'Show']);
+    Route::post('/login'   , [LoginController::class,    'Login'])->name('login');
+    Route::get ('/logout'  , [LogoutController::class,   'Logout']);
 
     Route::prefix('dashboard')->middleware('auth')->group(function ()
     {
         Route::get ('/' , [DashboardController::class,'Show']);
         Route::get ('/admin' , [DashboardController::class,'admin']);
-        Route::get ('/students/add' , [StudentController::class, 'create']);
-        Route::post('/students/add' , [StudentController::class, 'store'])->name('stu');
+        Route::get ('/students/add'  , [StudentController::class, 'create']);
+        Route::post('/students/add'  , [StudentController::class, 'store'])->name('stu');
         Route::get ('/students/list' , [StudentController::class, 'list']);
 
     });

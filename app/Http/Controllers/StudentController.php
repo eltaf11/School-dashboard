@@ -31,7 +31,7 @@ class StudentController extends Controller
     {
         $validated = $request->validated();
 
-        Student::create($validated);
+        Student::create($request->$validated());
 
         $request->session()->regenerate();
 
