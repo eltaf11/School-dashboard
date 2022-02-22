@@ -2,35 +2,38 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\Response;
+use Illuminate\Contracts\View\Factory;
 
 class StudentController extends Controller
 {
-    public function show()
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Application|Factory|View
+     */
+
+    public function create()
     {
         return view('dashboard.students.add');
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param StudentRequest $request
-     * @return Application|RedirectResponse|Redirector
-     */
-
-    public function add(StudentRequest $request)
+    public function store(StudentRequest $request)
     {
         $validated = $request->validated();
 
         Student::create($validated);
+
+        $request->session()->regenerate();
 
         return redirect('/')->with('success', "Successful");
     }
@@ -41,10 +44,6 @@ class StudentController extends Controller
         return view('dashboard.students.list', ['studs' => $studs]);
     }
 
-    public function edit_show($id)
-    {
-        $test = User::with('id' , $id)->first();
-        return view('dashboard.students.edit' , ['test' => $test]);
-    }
+
 
 }

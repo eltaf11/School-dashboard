@@ -39,21 +39,21 @@
         @csrf
         <h2>Sign Up</h2>
         <p>
-            <label for="name" class="floatLabel">{{$test -> name}}</label>
+            <label for="name" class="floatLabel"></label>
             <input id="name" name="name" type="text">
         </p>
 
         <p>
-            <label for="email" class="floatLabel">{{$test -> email}}</label>
+            <label for="email" class="floatLabel"></label>
             <input id="email" name="email" type="text">
         </p>
         <p>
-            <label for="password" class="floatLabel">{{$test -> password}}</label>
+            <label for="password" class="floatLabel"></label>
             <input id="password" name="password" type="password">
             {{--        <span>Enter a password longer than 8 characters</span>--}}
         </p>
         <p>
-            <label for="confirm_password" class="floatLabel">{{$test -> confirm_password}}</label>
+            <label for="confirm_password" class="floatLabel"></label>
             <input id="confirm_password" name="confirm_password" type="password">
             {{--        <span>Your passwords do not match</span>--}}
         </p>

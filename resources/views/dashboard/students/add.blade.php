@@ -104,7 +104,7 @@
 
             <h2>Add Student</h2>
             <hr>
-            <form action="{{ route('add') }}" method="post">
+            <form action="{{route('stu')}}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <input id="submit" type="submit" class="btn btn-dark">
+                        <input value="Add Student" type="submit" class="btn btn-dark">
                     </div>
                 </div>
             </form>

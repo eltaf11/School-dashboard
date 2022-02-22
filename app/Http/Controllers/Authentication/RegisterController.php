@@ -35,11 +35,16 @@ class RegisterController extends Controller
      * @param RegisterRequest $request
      * @return Application|RedirectResponse|Redirector
      */
+
+
     public function Register(RegisterRequest $request)
     {
         $validated = $request->validated();
+
         User::create($validated);
+
         $request->session()->regenerate();
+
         return redirect('/')->with('success', "Register Successful. Please Login");
 
     }
