@@ -43,6 +43,7 @@
     <p>
         <label for="name" class="floatLabel">Name</label>
         <input id="name" name="name" type="text">
+
     </p>
 
     <p>

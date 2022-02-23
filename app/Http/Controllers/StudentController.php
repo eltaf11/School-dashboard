@@ -40,7 +40,7 @@ class StudentController extends Controller
     {
         $validated = $request->validated();
 
-        Student::create($request->$validated);
+        Student::create($validated);
 
         $request->session()->regenerate();
 
@@ -70,7 +70,5 @@ class StudentController extends Controller
         $user->delete();
         return back()->with('success', 'User has been deleted');
     }
-
-
 
 }

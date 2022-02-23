@@ -13,6 +13,7 @@ class StudentRequest extends FormRequest
      */
     public function authorize()
     {
+
         return true;
     }
 
@@ -23,9 +24,11 @@ class StudentRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
-            'firstname' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
-            'lastname' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
+
+            'first_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
+            'last_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
             'gender' => 'required',
             'date_of_birth' => 'required|date',
             'class' => 'required',
@@ -33,12 +36,12 @@ class StudentRequest extends FormRequest
             'mobile_number' => 'required',
             'admission_number' => 'required',
             'father_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
-            'farther_occupation' => 'required',
+            'father_occupation' => 'required|string',
             'father_mobile_number' => 'required',
             'mother_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
-            'mother_occupation' => 'required',
+            'mother_occupation' => 'required|string',
             'mother_mobile_number' => 'required',
-            'address' => 'required'
+            'address' => 'required|string'
         ];
     }
 }

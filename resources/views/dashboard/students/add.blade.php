@@ -37,6 +37,10 @@
     main .card {
         margin-bottom: 20px;
     }
+    .help-block {
+        color: red;
+        font-size: 12px;
+    }
 </style>
 
 <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow" style="background-color: #282d32 !important; height: 60px ">
@@ -104,6 +108,7 @@
 
             <h2>Add Student</h2>
             <hr>
+
             <form action="{{ route('name') }}" method="post">
                 @csrf
                 <div class="row">
@@ -113,13 +118,15 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" name="firstname" id="firstname" class="form-control" value="">
+                            <input type="text" name="first_name" id="first_name" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('first_name')) ? $errors->first('first_name') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" name="lastname" id="lastname" class="form-control" value="">
+                            <input type="text" name="last_name" id="last_name" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('last_name')) ? $errors->first('last_name') : ''}}</span>
                         </div>
                     </div>
 
@@ -139,6 +146,7 @@
                             <label>Date of Birth</label>
                             <div>
                                 <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="">
+                                <span class="help-block">{{ ($errors->has('date_of_birth')) ? $errors->first('date_of_birth') : ''}}</span>
                             </div>
                         </div>
                     </div>
@@ -146,6 +154,7 @@
                         <div class="form-group">
                             <label>Class</label>
                             <input type="text" name="class" id="class" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('class')) ? $errors->first('class') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
@@ -153,6 +162,7 @@
                             <label>Joining Date</label>
                             <div>
                                 <input type="date" name="joining_date" id="joining_date" class="form-control" value="">
+                                <span class="help-block">{{ ($errors->has('joining_date')) ? $errors->first('joining_date') : ''}}</span>
                             </div>
                         </div>
                     </div>
@@ -160,12 +170,14 @@
                         <div class="form-group">
                             <label>Mobile Number</label>
                             <input type="text" name="mobile_number" id="mobile_number" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('mobile_number')) ? $errors->first('mobile_number') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Admission Number</label>
                             <input type="text" name="admission_number" id="admission_number" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('admission_number')) ? $errors->first('admission_number') : ''}}</span>
                         </div>
                     </div>
 
@@ -176,42 +188,49 @@
                         <div class="form-group">
                             <label>Father's Name</label>
                             <input type="text" name="father_name" id="father_name" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('father_name')) ? $errors->first('father_name') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Father's Occupation</label>
                             <input type="text" name="father_occupation" id="father_occupation" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('father_occupation')) ? $errors->first('father_occupation') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Father's Mobile</label>
                             <input type="text" name="father_mobile_number" id="father_mobile_number" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('father_mobile_number')) ? $errors->first('father_mobile_number') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mother's Name</label>
                             <input type="text" name="mother_name" id="mother_name" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('mother_name')) ? $errors->first('mother_name') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mother's Occupation</label>
                             <input type="text" name="mother_occupation" id="mother_occupation" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('mother_occupation')) ? $errors->first('mother_occupation') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mother's Mobile</label>
                             <input type="text" name="mother_mobile_number" id="mother_mobile_number" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('mother_mobile_number')) ? $errors->first('mother_mobile_number') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Address</label>
                             <textarea name="address" class="form-control"></textarea>
+                            <span class="help-block">{{ ($errors->has('address')) ? $errors->first('address') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12">

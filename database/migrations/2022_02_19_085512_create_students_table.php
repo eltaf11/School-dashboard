@@ -15,8 +15,8 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('gender');
             $table->date('date_of_birth');
             $table->string('class');
@@ -24,7 +24,7 @@ class CreateStudentsTable extends Migration
             $table->integer('mobile_number');
             $table->integer('admission_number');
             $table->string('father_name');
-            $table->string('farther_occupation');
+            $table->string('father_occupation');
             $table->integer('father_mobile_number');
             $table->string('mother_name');
             $table->string('mother_occupation');
