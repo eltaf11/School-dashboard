@@ -31,17 +31,35 @@ class StudentController extends Controller
     {
         $validated = $request->validated();
 
-        Student::create($request->$validated());
+        Student::create($request->$validated);
 
         $request->session()->regenerate();
 
-        return redirect('/')->with('success', "Successful");
+        return back()->with('success', "Successful");
     }
 
     public function list()
     {
         $studs = User::all();
-        return view('dashboard.students.list', ['studs' => $studs]);
+        return view('dashboard.students.list' ,['studs' => $studs]);
+    }
+
+    public function show($id)
+    {
+        $info = User::find($id);
+        return \view('dashboard.students.edit' , ['info' => $info]);
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return back()->with('success', 'User has been deleted');
     }
 
 

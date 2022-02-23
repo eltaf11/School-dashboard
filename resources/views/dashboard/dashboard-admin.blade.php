@@ -100,6 +100,8 @@
             </div>
         </div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <h1>Welcome Admin</h1>
+            <br>
             @include('dashboard.carts')
 
         </main>

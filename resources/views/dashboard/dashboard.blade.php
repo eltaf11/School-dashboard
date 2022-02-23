@@ -44,9 +44,6 @@
 <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow" style="background-color: #282d32 !important; height: 100px; text-align: center !important;">
     <a class="navbar-brand col-sm-10 col-md-12 mr-0" style="text-align: left; background-color: #282d32; padding-left: 50px"><h2>My Dashboard</h2></a>
 
-
-
-
 </nav>
 
 

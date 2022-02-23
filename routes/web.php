@@ -26,7 +26,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get ('/login'   , [LoginController::class,    'Show']);
     Route::post('/login'   , [LoginController::class,    'Login'])->name('login');
     Route::get ('/logout'  , [LogoutController::class,   'Logout']);
-
     Route::prefix('dashboard')->middleware('auth')->group(function ()
     {
         Route::get ('/' , [DashboardController::class,'Show']);
@@ -34,9 +33,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get ('/students/add'  , [StudentController::class, 'create']);
         Route::post('/students/add'  , [StudentController::class, 'store'])->name('stu');
         Route::get ('/students/list' , [StudentController::class, 'list']);
+        Route::get ('/students/delete/{id}' , [StudentController::class, 'destroy']);
+        Route::get ('/students/edit/{id}' , [StudentController::class, 'show']);
+        Route::post('/students/edit/{id}' , [StudentController::class, 'update']);
 
     });
+
+
 });
+
+
 
 
 

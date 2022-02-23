@@ -120,7 +120,7 @@
                         <td>{{$stud -> name }}</td>
                         <td>{{$stud -> email }}</td>
                         <td><a href="edit/{{$stud -> id}}" style="background-color: #8b8b8b; color: black; border: none" class="btn btn-primary">Edit</a></td>
-                        <td><a href="/students/delete/{{$stud->id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">Delete</a></td>
+                        <td><a href="delete/{{$stud->id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">Delete</a></td>
                     </tr>
                     </tbody>
                     @endforeach
