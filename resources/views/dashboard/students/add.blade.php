@@ -104,7 +104,7 @@
 
             <h2>Add Student</h2>
             <hr>
-            <form action="{{route('stu')}}" method="post">
+            <form action="{{ route('name') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -113,13 +113,13 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" name="firstname" class="form-control" value="">
+                            <input type="text" name="firstname" id="firstname" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" name="lastname" class="form-control" value="">
+                            <input type="text" name="lastname" id="lastname" class="form-control" value="">
                         </div>
                     </div>
 
@@ -138,34 +138,34 @@
                         <div class="form-group">
                             <label>Date of Birth</label>
                             <div>
-                                <input type="date" name="date_of_birth" class="form-control" value="">
+                                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" value="">
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Class</label>
-                            <input type="text" name="class" class="form-control" value="">
+                            <input type="text" name="class" id="class" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Joining Date</label>
                             <div>
-                                <input type="date" name="joining_date" class="form-control" value="">
+                                <input type="date" name="joining_date" id="joining_date" class="form-control" value="">
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mobile Number</label>
-                            <input type="text" name="mobile_number" class="form-control" value="">
+                            <input type="text" name="mobile_number" id="mobile_number" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Admission Number</label>
-                            <input type="text" name="admission_number" class="form-control" value="">
+                            <input type="text" name="admission_number" id="admission_number" class="form-control" value="">
                         </div>
                     </div>
 
@@ -175,37 +175,37 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Father's Name</label>
-                            <input type="text" name="father_name" class="form-control" value="">
+                            <input type="text" name="father_name" id="father_name" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Father's Occupation</label>
-                            <input type="text" name="father_occupation" class="form-control" value="">
+                            <input type="text" name="father_occupation" id="father_occupation" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Father's Mobile</label>
-                            <input type="text" name="father_mobile_number" class="form-control" value="">
+                            <input type="text" name="father_mobile_number" id="father_mobile_number" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mother's Name</label>
-                            <input type="text" name="mother_name" class="form-control" value="">
+                            <input type="text" name="mother_name" id="mother_name" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mother's Occupation</label>
-                            <input type="text" name="mother_occupation" class="form-control" value="">
+                            <input type="text" name="mother_occupation" id="mother_occupation" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label>Mother's Mobile</label>
-                            <input type="text" name="mother_mobile_number" class="form-control" value="">
+                            <input type="text" name="mother_mobile_number" id="mother_mobile_number" class="form-control" value="">
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <input value="Add Student" type="submit" class="btn btn-dark">
+                        <input value="Add Student" type="submit" id="submit" class="btn btn-dark">
                     </div>
                 </div>
             </form>

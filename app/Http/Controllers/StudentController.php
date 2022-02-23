@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Contracts\View\Factory;
+
 
 class StudentController extends Controller
 {
@@ -26,6 +29,12 @@ class StudentController extends Controller
     {
         return view('dashboard.students.add');
     }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param StudentRequest $request
+     * @return RedirectResponse
+     */
 
     public function store(StudentRequest $request)
     {
