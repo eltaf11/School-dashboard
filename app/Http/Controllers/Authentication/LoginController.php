@@ -17,13 +17,21 @@ class LoginController extends Controller
 
     public function Login(LoginRequest $request)
     {
-
         $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
+
             $request->session()->regenerate();
-            return redirect()->intended('home');
+            return redirect()->intended('home')->with('success' , "successful");
         }
+
+        elseif(!Auth::attempt($credentials)){
+
+            return redirect('/register')->with('fails' , "You are not registered");
+        }
+
         return back()->withErrors('Login details are not valid');
+
     }
 }
 

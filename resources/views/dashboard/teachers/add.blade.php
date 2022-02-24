@@ -106,14 +106,14 @@
         </div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
-            <h2>Add Student</h2>
+            <h2>Add Teacher</h2>
             <hr>
 
-            <form action="{{ route('student') }}" method="post">
+            <form action="{{ route('teacher') }}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="form-title"><span>Student Information</span></h4>
+                        <h4 class="form-title"><span>Teacher Information</span></h4>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
@@ -132,17 +132,9 @@
 
                     <div class="col-12 col-sm-6">
                         <div class="form-group">
-                            <label>Student ID</label>
-                            <input type="text" name="student_id" id="student_id" class="form-control" value="">
-                            <span class="help-block">{{ ($errors->has('student_id')) ? $errors->first('student_id') : ''}}</span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label>Father's Name</label>
-                            <input type="text" name="father_name" id="father_name" class="form-control" value="">
-                            <span class="help-block">{{ ($errors->has('father_name')) ? $errors->first('father_name') : ''}}</span>
+                            <label>Teacher ID</label>
+                            <input type="text" name="teacher_id" id="teacher_id" class="form-control" value="">
+                            <span class="help-block">{{ ($errors->has('teacher_id')) ? $errors->first('teacher_id') : ''}}</span>
                         </div>
                     </div>
 
@@ -172,32 +164,6 @@
                             <label>Course ID</label>
                             <input type="text" name="course_id" id="course_id" class="form-control" value="">
                             <span class="help-block">{{ ($errors->has('course_id')) ? $errors->first('course_id') : ''}}</span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label>Joining Date</label>
-                            <div>
-                                <input type="date" name="joining_date" id="joining_date" class="form-control" value="">
-                                <span class="help-block">{{ ($errors->has('joining_date')) ? $errors->first('joining_date') : ''}}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label>Mobile Number</label>
-                            <input type="text" name="mobile_number" id="mobile_number" class="form-control" value="">
-                            <span class="help-block">{{ ($errors->has('mobile_number')) ? $errors->first('mobile_number') : ''}}</span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control"></textarea>
-                            <span class="help-block">{{ ($errors->has('address')) ? $errors->first('address') : ''}}</span>
                         </div>
                     </div>
 

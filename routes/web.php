@@ -5,6 +5,7 @@ use App\Http\Controllers\Authentication\LogoutController;
 use App\Http\Controllers\Authentication\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,11 +35,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get ('/student' , [DashboardController::class,'student']);
         Route::get ('/teacher' , [DashboardController::class,'teacher']);
         Route::get ('/students/add'  , [StudentController::class, 'create']);
-        Route::post('/students/add'  , [StudentController::class, 'store'])->name('name');
+        Route::post('/students/add'  , [StudentController::class, 'store'])->name('student');
         Route::get ('/students/list' , [StudentController::class, 'list']);
         Route::get ('/students/delete/{id}' , [StudentController::class, 'destroy']);
         Route::get ('/students/edit/{id}' , [StudentController::class, 'show']);
         Route::post('/students/edit/{id}' , [StudentController::class, 'update']);
+        Route::get ('/teachers/add'  , [TeacherController::class, 'create']);
+        Route::post('/teachers/add'  , [TeacherController::class, 'store'])->name('teacher');
+        Route::get ('/teachers/list' , [TeacherController::class, 'list']);
 
     });
 
