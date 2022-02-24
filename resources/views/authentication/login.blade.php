@@ -31,6 +31,10 @@
         padding: 15px;
         border-radius: 3px;
     }
+    .help-block {
+        color: red;
+        font-size: 12px;
+    }
 
 
 </style>
@@ -43,12 +47,14 @@
     <p>
         <label for="email" class="floatLabel">Email</label>
         <input id="email" name="email" type="text">
+        <span class="help-block">{{ ($errors->has('email')) ? $errors->first('email') : ''}}</span>
 
     </p>
     <p>
         <label for="password" class="floatLabel">Password</label>
         <input id="password" name="password" type="password">
-{{--        <span>Enter a password longer than 8 characters</span>--}}
+        <span class="help-block">{{ ($errors->has('password')) ? $errors->first('password') : ''}}</span>
+
     </p>
 
     <p>

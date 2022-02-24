@@ -40,7 +40,7 @@
 </style>
 
 <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow" style="background-color: #282d32 !important; height: 60px ">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0"  style="background-color: #282d32">Admin Dashboard</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0"  style="background-color: #282d32">Student Dashboard</a>
     <input type="text" class="form-control form-control-primary w-80" placeholder="Search..." >
     <a class="btn btn-primary" href="#" style="background-color: #282d32; border-color: #282d32; ">Search</a>
 
@@ -66,7 +66,7 @@
                 <ul class="nav flex-column sidebar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/dashboard/admin">
+                        <a class="nav-link" href="/dashboard/student">
                             <svg class="bi bi-chevron-right" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg>
                             Dashboard
                         </a>
@@ -100,9 +100,9 @@
             </div>
         </div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <h1>Welcome Admin</h1>
+            <h1>Welcome Student</h1>
             <br>
-            @include('dashboard.carts')
+
 
         </main>
     </div>

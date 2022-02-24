@@ -134,11 +134,12 @@
                         <div class="form-group">
                             <label>Gender</label>
                             <select name="gender" class="form-control select">
-                                <option>Select Gender</option>
+                                <option></option>
                                 <option>Female</option>
                                 <option>Male</option>
                                 <option>Others</option>
                             </select>
+                            <span class="help-block">{{ ($errors->has('gender')) ? $errors->first('gender') : ''}}</span>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">

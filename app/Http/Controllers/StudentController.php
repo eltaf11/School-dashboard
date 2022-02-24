@@ -7,10 +7,12 @@ use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
-use Illuminate\Contracts\View\Factory;
+use function back;
+use function view;
 
 
 class StudentController extends Controller

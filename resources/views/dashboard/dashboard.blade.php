@@ -59,7 +59,7 @@
                 <div class="col-xl-3 col-sm-6 col-12 d-flex">
                     <div style="text-align: center;  height:100px; border-radius: 2px;background-color: #282d32 " class="card bg-four w-100">
                         <div class="card-body">
-                            <h2><a href="" style="text-decoration: none; color:white; ">Student</a></h2>
+                            <h2><a href="/dashboard/student" style="text-decoration: none; color:white; ">Student</a></h2>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="col-xl-3 col-sm-6 col-12 d-flex">
                     <div style="border-radius: 2px; ; background-color: #282d32 " class="card bg-four w-100">
                         <div class="card-body" style="text-align: center">
-                            <h2><a href="" style="text-decoration: none; color:white; ">Teacher</a></h2>
+                            <h2><a href="/dashboard/teacher" style="text-decoration: none; color:white; ">Teacher</a></h2>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use function view;
 
 class DashboardController extends Controller
 {
@@ -18,5 +18,15 @@ class DashboardController extends Controller
     {
         $count = User::count('id');
         return view('dashboard.dashboard-admin' , ['count' => $count]);
+    }
+
+    public function student()
+    {
+        return view('dashboard.dashboard-student');
+    }
+
+    public function teacher()
+    {
+        return view('dashboard.dashboard-teacher');
     }
 }

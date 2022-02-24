@@ -31,17 +31,17 @@ class StudentRequest extends FormRequest
             'last_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
             'gender' => 'required',
             'date_of_birth' => 'required|date',
-            'class' => 'required',
+            'class' => 'required|max:255',
             'joining_date' => 'required|date',
-            'mobile_number' => 'required',
-            'admission_number' => 'required',
+            'mobile_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|digits:11',
+            'admission_number' => 'required|numeric',
             'father_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
-            'father_occupation' => 'required|string',
-            'father_mobile_number' => 'required',
+            'father_occupation' => 'required|string|max:255',
+            'father_mobile_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|digits:11',
             'mother_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
             'mother_occupation' => 'required|string',
-            'mother_mobile_number' => 'required',
-            'address' => 'required|string'
+            'mother_mobile_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|digits:11',
+            'address' => 'required|max:255'
         ];
     }
 }

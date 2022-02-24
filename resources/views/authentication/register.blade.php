@@ -31,6 +31,10 @@
         padding: 15px;
         border-radius: 3px;
     }
+    .help-block {
+        color: red;
+        font-size: 12px;
+    }
 
 
 </style>
@@ -43,22 +47,25 @@
     <p>
         <label for="name" class="floatLabel">Name</label>
         <input id="name" name="name" type="text">
+        <span class="help-block">{{ ($errors->has('name')) ? $errors->first('name') : ''}}</span>
 
     </p>
 
     <p>
         <label for="email" class="floatLabel">Email</label>
         <input id="email" name="email" type="text">
+        <span class="help-block">{{ ($errors->has('email')) ? $errors->first('email') : ''}}</span>
     </p>
     <p>
         <label for="password" class="floatLabel">Password</label>
         <input id="password" name="password" type="password">
-{{--        <span>Enter a password longer than 8 characters</span>--}}
+        <span class="help-block">{{ ($errors->has('password')) ? $errors->first('password') : ''}}</span>
     </p>
     <p>
         <label for="confirm_password" class="floatLabel">Confirm Password</label>
         <input id="confirm_password" name="confirm_password" type="password">
-{{--        <span>Your passwords do not match</span>--}}
+        <span class="help-block">{{ ($errors->has('confirm_password')) ? $errors->first('confirm_password') : ''}}</span>
+
     </p>
     <p>
         <input type="submit" value="Create Account" id="submit">
