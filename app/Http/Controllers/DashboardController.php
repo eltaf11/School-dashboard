@@ -17,16 +17,16 @@ class DashboardController extends Controller
     public function admin()
     {
         $count = User::count('id');
-        return view('dashboard.dashboard-admin' , ['count' => $count]);
+        return view('dashboard.admin.dashboard-admin' , ['count' => $count]);
     }
 
     public function student()
     {
-        return view('dashboard.dashboard-student');
+        return view('dashboard.student.dashboard-student');
     }
 
     public function teacher()
     {
-        return view('dashboard.dashboard-teacher');
+        return view('dashboard.teacher.dashboard-teacher');
     }
 }

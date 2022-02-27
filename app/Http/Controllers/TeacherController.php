@@ -27,7 +27,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('dashboard.teachers.add');
+        return view('dashboard.admin.teachers.add');
     }
 
     /**
@@ -36,6 +36,8 @@ class TeacherController extends Controller
      * @param TeacherRequest $request
      * @return RedirectResponse
      */
+
+//////////////////////////////////////////////////////////////////////////
 
     public function store(TeacherRequest $request)
     {
@@ -48,9 +50,42 @@ class TeacherController extends Controller
         return back()->with('success', "Successful");
     }
 
+//////////////////////////////////////////////////////////////////////////
+
     public function list()
     {
         $teachers = Teacher::all();
-        return view('dashboard.teachers.list' ,['teachers' => $teachers]);
+        return view('dashboard.admin.teachers.list' ,['teachers' => $teachers]);
+    }
+
+//////////////////////////////////////////////////////////////////////////
+
+    public function show($id)
+    {
+        $info = Teacher::findorfail($id);
+
+        return view('dashboard.admin.teachers.edit' , ['info' => $info]);
+    }
+
+//////////////////////////////////////////////////////////////////////////
+
+    public function update(TeacherRequest $request ,$id)
+    {
+        $validated = $request->validated();
+
+        $info = Teacher::findorfail($id);
+        $info -> update($validated);
+
+        $request->session()->regenerate();
+        return redirect('/dashboard/teachers/list')->with('success', "Successful");
+    }
+
+//////////////////////////////////////////////////////////////////////////
+
+    public function destroy($id)
+    {
+        $teacher = Teacher::findorfail($id);
+        $teacher -> delete();
+        return back()->with('success', 'User has been deleted');
     }
 }

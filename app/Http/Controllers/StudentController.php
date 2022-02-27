@@ -29,7 +29,7 @@ class StudentController extends Controller
 
     public function create()
     {
-        return view('dashboard.students.add');
+        return view('dashboard.admin.students.add');
     }
     /**
      * Store a newly created resource in storage.
@@ -51,24 +51,31 @@ class StudentController extends Controller
 
     public function list()
     {
-        $studs = User::all();
-        return view('dashboard.students.list' ,['studs' => $studs]);
+        $studs = Student::all();
+        return view('dashboard.admin.students.list' ,['studs' => $studs]);
     }
 
     public function show($id)
     {
-        $info = User::find($id);
-        return \view('dashboard.students.edit' , ['info' => $info]);
+        $info = Student::findorfail($id);
+
+        return view('dashboard.admin.students.edit' , ['info' => $info]);
     }
 
-    public function update()
+    public function update(StudentRequest $request ,$id)
     {
+        $validated = $request->validated();
 
+        $info = Student::findorfail($id);
+        $info -> update($validated);
+
+        $request->session()->regenerate();
+        return redirect('/dashboard/students/list')->with('success', "Successful");
     }
 
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = Student::findorfail($id);
         $user->delete();
         return back()->with('success', 'User has been deleted');
     }
