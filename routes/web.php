@@ -8,7 +8,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +49,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get ('/courses/add'  ,         [CourseController::class, 'create']);
         Route::post('/courses/add'  ,         [CourseController::class, 'store'])->name('course');
         Route::get ('/courses/list' ,         [CourseController::class, 'list']);
+        Route::get ('/courses/delete/{id}' ,  [CourseController::class, 'destroy']);
+        Route::get ('/courses/edit/{id}' ,    [CourseController::class, 'show']);
+        Route::post('/courses/edit/{id}' ,    [CourseController::class, 'update']);
+        Route::get ('/courses/course_registered/{id}',[CourseController::class, 'registered']);
 
     });
 
