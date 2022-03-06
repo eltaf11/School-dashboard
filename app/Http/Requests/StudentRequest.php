@@ -29,12 +29,8 @@ class StudentRequest extends FormRequest
 
             'first_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
             'last_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
-            'student_id' => 'required|numeric',
-            'father_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
+            'user_number' => 'required|numeric',
             'gender' => 'required',
-            'course_name' => 'required|max:255',
-            'course_id' => 'required|numeric',
-            'joining_date' => 'required|date',
             'mobile_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:11',
             'address' => 'required|max:255'
         ];
