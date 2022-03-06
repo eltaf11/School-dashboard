@@ -6,24 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use mysql_xdevapi\Table;
 
-class Course extends Model
+class CourseStudent extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
 
-        'course_name',
-        'code',
-        'instructor',
-        'unit'
+        'students_user_name',
+        'courses_code'
     ];
-
-    public function students()
-    {
-        return $this->belongsToMany(Student::class , 'course_student');
-
-    }
-
 }

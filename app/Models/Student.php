@@ -21,5 +21,10 @@ class Student extends Authenticatable
         'address'
     ];
 
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class , 'course_student');
+    }
+
 
 }
