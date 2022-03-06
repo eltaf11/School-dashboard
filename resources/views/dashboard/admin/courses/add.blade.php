@@ -16,9 +16,9 @@
             </div>
             <div class="col-12 col-sm-6">
                 <div class="form-group">
-                    <label>Course ID</label>
-                    <input type="text" name="course_id" id="course_id" class="form-control" value="">
-                    <span class="help-block">{{ ($errors->has('course_id')) ? $errors->first('course_id') : ''}}</span>
+                    <label>Code</label>
+                    <input type="text" name="code" id="code" class="form-control" value="">
+                    <span class="help-block">{{ ($errors->has('code')) ? $errors->first('code') : ''}}</span>
                 </div>
             </div>
 
