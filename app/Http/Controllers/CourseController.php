@@ -80,5 +80,11 @@ class CourseController extends Controller
         return back()->with('success' , "Successful");
     }
 
+    public function test_id($student_user_number)
+    {
+        $test = Student::find($student_user_number)->courses;
+        dd($test);
+    }
+
 
 }

@@ -12,6 +12,7 @@ class Student extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -23,7 +24,7 @@ class Student extends Authenticatable
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class , 'course_student');
+        return $this->belongsToMany(Course::class , 'course_students');
     }
 
 

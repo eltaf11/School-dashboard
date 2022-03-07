@@ -54,6 +54,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('/courses/edit/{id}' ,    [CourseController::class, 'update']);
         Route::get ('/courses/test' ,[CourseController::class, 'test_show']);
         Route::post('/courses/test' ,[CourseController::class, 'test_store'])->name('test');
+        Route::get ('/courses/last/{id}' ,[CourseController::class, 'test_id']);
 
     });
 
