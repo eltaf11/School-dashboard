@@ -17,7 +17,6 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->char            ('first_name' , 30);
             $table->char            ('last_name' , 30);
-            $table->unsignedInteger ('user_number');
             $table->enum            ('gender' , ['Male' , 'Female' , 'Others']);
             $table->timestamps();
         });

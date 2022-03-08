@@ -14,13 +14,7 @@
                     <span class="help-block">{{ ($errors->has('course_name')) ? $errors->first('course_name') : ''}}</span>
                 </div>
             </div>
-            <div class="col-12 col-sm-6">
-                <div class="form-group">
-                    <label>Code</label>
-                    <input type="text" name="code" id="code" class="form-control" value="{{$course->code}}">
-                    <span class="help-block">{{ ($errors->has('code')) ? $errors->first('code') : ''}}</span>
-                </div>
-            </div>
+
 
             <div class="col-12 col-sm-6">
                 <div class="form-group">

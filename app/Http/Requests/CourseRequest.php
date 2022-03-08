@@ -25,7 +25,6 @@ class CourseRequest extends FormRequest
     {
         return [
             'course_name' => 'required|max:255',
-            'code'        => 'required|numeric',
             'instructor'  => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
             'unit'        => 'required|numeric',
         ];

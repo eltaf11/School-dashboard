@@ -8,6 +8,7 @@ use App\Http\Requests\StudentRequest;
 use App\Models\Course;
 use App\Models\CourseStudent;
 use App\Models\Student;
+use App\Models\StudentCourse;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -66,24 +67,24 @@ class CourseController extends Controller
     }
 
 
-    public function test_show()
+//    public function test_show()
+//    {
+//        return view('dashboard.admin.test');
+//    }
+//
+//
+//    public function test_store(CourseStudentRequest $request)
+//    {
+//        $validated = $request->validated();
+//        StudentCourse::create($validated);
+//        $request->session()->regenerate();
+//        return back()->with('success' , "Successful");
+//    }
+//
+    public function test_id($id)
     {
-        return view('dashboard.admin.test');
-    }
+        $test = StudentCourse::all();
 
-
-    public function test_store(CourseStudentRequest $request)
-    {
-        $validated = $request->validated();
-        CourseStudent::create($validated);
-        $request->session()->regenerate();
-        return back()->with('success' , "Successful");
-    }
-
-    public function test_id($student_user_number)
-    {
-        $test = Student::find($student_user_number)->courses;
-        dd($test);
     }
 
 

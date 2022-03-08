@@ -25,13 +25,6 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label>User Number</label>
-                            <input type="text" name="user_number" id="user_number" class="form-control" value="">
-                            <span class="help-block">{{ ($errors->has('user_number')) ? $errors->first('user_number') : ''}}</span>
-                        </div>
-                    </div>
 
                     <div class="col-12 col-sm-6">
                         <div class="form-group">

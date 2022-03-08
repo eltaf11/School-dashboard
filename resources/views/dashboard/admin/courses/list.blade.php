@@ -9,7 +9,6 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Course Name</th>
-                <th scope="col">Code</th>
                 <th scope="col">Instructor</th>
                 <th scope="col">Unit</th>
 
@@ -20,7 +19,6 @@
                 <tr>
                     <th scope="row">{{$courses -> id}}</th>
                     <td>{{$courses -> course_name }}</td>
-                    <td>{{$courses -> code }}</td>
                     <td>{{$courses -> instructor }}</td>
                     <td>{{$courses -> unit}}</td>
 

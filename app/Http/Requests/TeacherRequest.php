@@ -26,7 +26,6 @@ class TeacherRequest extends FormRequest
         return [
             'first_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
             'last_name' => 'required|max:255|regex:/^[a-zA-ZÑñ\s]+$/',
-            'user_number' => 'required|numeric',
             'gender' => 'required',
         ];
     }

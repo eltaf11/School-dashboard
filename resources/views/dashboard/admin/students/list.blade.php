@@ -10,25 +10,23 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Last name</th>
-                        <th scope="col">User Number</th>
                         <th scope="col">Gender</th>
 
 
                     </tr>
                     </thead>
-                    @foreach($studs as $stud)
+                    @foreach($students as $student)
                     <tbody>
                     <tr>
-                        <th scope="row">{{$stud -> id}}</th>
-                        <td>{{$stud -> first_name }}</td>
-                        <td>{{$stud -> last_name }}</td>
-                        <td>{{$stud -> user_number}}</td>
-                        <td>{{$stud -> gender }}</td>
+                        <th scope="row">{{$student -> id}}</th>
+                        <td>{{$student -> first_name }}</td>
+                        <td>{{$student -> last_name }}</td>
+                        <td>{{$student -> gender }}</td>
 
                         <td>
-                            <a href="edit/{{$stud -> id}}" style="background-color: #8b8b8b; color: black; border: none" class="btn btn-primary">Edit</a>
-                            <a href="delete/{{$stud->id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">Delete</a>
-                            <a href="/dashboard/courses/last/{{$stud -> user_number}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">test</a>
+                            <a href="edit/{{$student -> id}}" style="background-color: #8b8b8b; color: black; border: none" class="btn btn-primary">Edit</a>
+                            <a href="delete/{{$student->id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">Delete</a>
+                            <a href="/dashboard/courses/last/{{$student -> id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">test</a>
                         </td>
                     </tr>
                     </tbody>

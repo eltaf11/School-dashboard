@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\StudentRequest;
+use App\Models\Course;
 use App\Models\Student;
+use App\Models\StudentCourse;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -31,6 +33,7 @@ class StudentController extends Controller
     {
         return view('dashboard.admin.students.add');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -41,33 +44,33 @@ class StudentController extends Controller
     public function store(StudentRequest $request)
     {
         $validated = $request->validated();
+        $student = Student::create($validated);
 
-        Student::create($validated);
-
-        $request->session()->regenerate();
+        $course = Course::find([2,3]);
+        $student->courses()->attach($course);
 
         return back()->with('success', "Successful");
     }
 
     public function list()
     {
-        $studs = Student::all();
-        return view('dashboard.admin.students.list' ,['studs' => $studs]);
+        $students = Student::all();
+        return view('dashboard.admin.students.list', ['students' => $students]);
     }
 
     public function show($id)
     {
-        $info = Student::findorfail($id);
+        $students = Student::findorfail($id);
 
-        return view('dashboard.admin.students.edit' , ['info' => $info]);
+        return view('dashboard.admin.students.edit', ['students' => $students]);
     }
 
-    public function update(StudentRequest $request ,$id)
+    public function update(StudentRequest $request, $id)
     {
         $validated = $request->validated();
 
         $info = Student::findorfail($id);
-        $info -> update($validated);
+        $info->update($validated);
 
         $request->session()->regenerate();
         return redirect('/dashboard/students/list')->with('success', "Successful");

@@ -52,8 +52,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get ('/courses/delete/{id}' ,  [CourseController::class, 'destroy']);
         Route::get ('/courses/edit/{id}' ,    [CourseController::class, 'show']);
         Route::post('/courses/edit/{id}' ,    [CourseController::class, 'update']);
-        Route::get ('/courses/test' ,[CourseController::class, 'test_show']);
-        Route::post('/courses/test' ,[CourseController::class, 'test_store'])->name('test');
+
+
+
+//        Route::get ('/courses/test' ,[CourseController::class, 'test_show']);
+//        Route::post('/courses/test' ,[CourseController::class, 'test_store'])->name('test');
         Route::get ('/courses/last/{id}' ,[CourseController::class, 'test_id']);
 
     });

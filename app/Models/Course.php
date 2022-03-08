@@ -15,15 +15,16 @@ class Course extends Model
     protected $fillable = [
 
         'course_name',
-        'code',
         'instructor',
         'unit'
     ];
 
+
     public function students()
     {
-        return $this->belongsToMany(Student::class , 'course_students');
-
+        return $this->belongsToMany(Student::class , 'student_courses');
     }
+
+
 
 }

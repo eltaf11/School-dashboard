@@ -17,7 +17,6 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->char             ('first_name' , 30);
             $table->char             ('last_name' , 30);
-            $table->unsignedInteger  ('user_number')->primary();
             $table->enum             ('gender' , ['Male' , 'Female' , 'Others']);
             $table->bigInteger       ('mobile_number');
             $table->string           ('address');

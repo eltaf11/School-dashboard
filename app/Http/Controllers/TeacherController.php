@@ -42,11 +42,8 @@ class TeacherController extends Controller
     public function store(TeacherRequest $request)
     {
         $validated = $request->validated();
-
         Teacher::create($validated);
-
         $request->session()->regenerate();
-
         return back()->with('success', "Successful");
     }
 

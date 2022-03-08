@@ -10,32 +10,23 @@
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" name="first_name" id="first_name" class="form-control" value="{{$info->first_name}}">
+                    <input type="text" name="first_name" id="first_name" class="form-control" value="{{$students->first_name}}">
                     <span class="help-block">{{ ($errors->has('first_name')) ? $errors->first('first_name') : ''}}</span>
                 </div>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" name="last_name" id="last_name" class="form-control" value="{{$info->last_name}}">
+                    <input type="text" name="last_name" id="last_name" class="form-control" value="{{$students->last_name}}">
                     <span class="help-block">{{ ($errors->has('last_name')) ? $errors->first('last_name') : ''}}</span>
                 </div>
             </div>
 
             <div class="col-12 col-sm-6">
                 <div class="form-group">
-                    <label>User Number</label>
-                    <input type="text" name="user_number" id="user_number" class="form-control" value="{{$info->user_number}}">
-                    <span class="help-block">{{ ($errors->has('user_number')) ? $errors->first('user_number') : ''}}</span>
-                </div>
-            </div>
-
-
-            <div class="col-12 col-sm-6">
-                <div class="form-group">
                     <label>Gender</label>
                     <select name="gender" class="form-control select">
-                        <option>{{$info->gender}}</option>
+                        <option>{{$students->gender}}</option>
                         <option>Female</option>
                         <option>Male</option>
                         <option>Others</option>
@@ -47,7 +38,7 @@
             <div class="col-12 col-sm-6">
                 <div class="form-group">
                     <label>Mobile Number</label>
-                    <input type="text" name="mobile_number" id="mobile_number" class="form-control" value="{{$info->mobile_number}}">
+                    <input type="text" name="mobile_number" id="mobile_number" class="form-control" value="{{$students->mobile_number}}">
                     <span class="help-block">{{ ($errors->has('mobile_number')) ? $errors->first('mobile_number') : ''}}</span>
                 </div>
             </div>
@@ -55,7 +46,7 @@
             <div class="col-12 col-sm-6">
                 <div class="form-group" >
                     <label>Address</label>
-                    <textarea name="address" class="form-control" >{{$info->address}}"</textarea>
+                    <textarea name="address" class="form-control" >{{$students->address}}"</textarea>
                     <span class="help-block">{{ ($errors->has('address')) ? $errors->first('address') : ''}}</span>
                 </div>
             </div>
