@@ -32,7 +32,7 @@ return array(
     'App\\Http\\Requests\\TeacherRequest' => $baseDir . '/app/Http/Requests/TeacherRequest.php',
     'App\\Models\\Course' => $baseDir . '/app/Models/Course.php',
     'App\\Models\\Student' => $baseDir . '/app/Models/Student.php',
-    'App\\Models\\StudentCourses' => $baseDir . '/app/Models/StudentCourses.php',
+    'App\\Models\\StudentCourse' => $baseDir . '/app/Models/StudentCourse.php',
     'App\\Models\\Teacher' => $baseDir . '/app/Models/Teacher.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

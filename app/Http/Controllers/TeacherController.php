@@ -74,7 +74,7 @@ class TeacherController extends Controller
         $info -> update($validated);
 
         $request->session()->regenerate();
-        return redirect('/dashboard/teachers/list')->with('success', "Successful");
+        return redirect('/dashboard/admin/teachers/list')->with('success', "Successful");
     }
 
 //////////////////////////////////////////////////////////////////////////

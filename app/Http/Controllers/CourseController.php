@@ -55,7 +55,7 @@ class CourseController extends Controller
         $course = Course::findorfail($id);
         $course -> update($validated);
         $request->session()->regenerate();
-        return redirect('/dashboard/courses/list')->with('success', "Successful");
+        return redirect('/dashboard/admin/courses/list')->with('success', "Successful");
     }
 
 

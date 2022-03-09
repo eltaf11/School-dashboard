@@ -73,7 +73,7 @@ class StudentController extends Controller
         $info->update($validated);
 
         $request->session()->regenerate();
-        return redirect('/dashboard/students/list')->with('success', "Successful");
+        return redirect('/dashboard/admin/students/list')->with('success', "Successful");
     }
 
     public function destroy($id)

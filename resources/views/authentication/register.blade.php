@@ -41,9 +41,9 @@
 
 <form action="{{ route('register') }}" method="post">
     @csrf
-{{--    @method('PUT')--}}
 
     <h2>Sign Up</h2>
+
     <p>
         <label for="name" class="floatLabel">Name</label>
         <input id="name" name="name" type="text">
@@ -67,6 +67,16 @@
         <span class="help-block">{{ ($errors->has('confirm_password')) ? $errors->first('confirm_password') : ''}}</span>
 
     </p>
+
+    <label for="role" class="floatLabel">Role</label>
+    <select name="role" class="form-control select">
+        <option></option>
+        <option>Admin</option>
+        <option>Teacher</option>
+        <option>Student</option>
+    </select>
+    <span class="help-block">{{ ($errors->has('role')) ? $errors->first('role') : ''}}</span>
+    <br>
     <p>
         <input type="submit" value="Create Account" id="submit">
     </p>
