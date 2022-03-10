@@ -36,10 +36,6 @@ use RuntimeException;
  */
 class Auth extends Facade
 {
-    public static function getProvider()
-    {
-    }
-
     /**
      * Get the registered name of the component.
      *
