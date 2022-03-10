@@ -33,5 +33,23 @@ class LoginController extends Controller
         return back()->withErrors('Login details are not valid');
 
     }
+
+    protected function authenticated(Request $request, $user)
+    {
+
+        if($user->isAdmin()) {
+            return redirect(route('dashboard/admin'));
+        }
+
+        else if($user->isTeacher()) {
+            return redirect(route('dashboard/teacher'));
+        }
+
+        else if($user->isStudent()) {
+            return redirect(route('dashboard/student'));
+        }
+
+        abort(404);
+    }
 }
 

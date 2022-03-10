@@ -566,6 +566,7 @@ class ComposerStaticInit97e5c52c6e5a280add46111b70b9d87a
         'App\\Http\\Requests\\StudentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StudentRequest.php',
         'App\\Http\\Requests\\TeacherRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TeacherRequest.php',
         'App\\Models\\Course' => __DIR__ . '/../..' . '/app/Models/Course.php',
+        'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Student' => __DIR__ . '/../..' . '/app/Models/Student.php',
         'App\\Models\\StudentCourse' => __DIR__ . '/../..' . '/app/Models/StudentCourse.php',
         'App\\Models\\Teacher' => __DIR__ . '/../..' . '/app/Models/Teacher.php',

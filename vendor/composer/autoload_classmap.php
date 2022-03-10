@@ -31,6 +31,7 @@ return array(
     'App\\Http\\Requests\\StudentRequest' => $baseDir . '/app/Http/Requests/StudentRequest.php',
     'App\\Http\\Requests\\TeacherRequest' => $baseDir . '/app/Http/Requests/TeacherRequest.php',
     'App\\Models\\Course' => $baseDir . '/app/Models/Course.php',
+    'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
     'App\\Models\\Student' => $baseDir . '/app/Models/Student.php',
     'App\\Models\\StudentCourse' => $baseDir . '/app/Models/StudentCourse.php',
     'App\\Models\\Teacher' => $baseDir . '/app/Models/Teacher.php',

@@ -45,7 +45,7 @@ class RegisterController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('/')->with('success', "Register Successful. Please Login");
+        return redirect('/home')->with('success', "Register Successful. Please Login");
 
     }
 
