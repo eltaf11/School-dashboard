@@ -12,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -41,11 +42,14 @@ class RegisterController extends Controller
     {
         $validated = $request->validated();
 
-        User::create($validated);
+        DB::transaction(function () use ($validated , $request){
+            User::create($validated);
+        });
 
-        $request->session()->regenerate();
+            $request->session()->regenerate();
+            $request->session()->flash('notification', 'Thank you for subscribing!');
+            return redirect('/home')->with('success', "Register Successful. Please Login");
 
-        return redirect('/home')->with('success', "Register Successful. Please Login");
 
     }
 

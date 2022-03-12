@@ -80,6 +80,16 @@
     <p>
         <input type="submit" value="Create Account" id="submit">
     </p>
+
+
+    @if (session()->has('notification'))
+        <div class="notification">
+            {!! session('notification') !!}
+        </div>
+    @endif
+
+
+
 </form>
 
 @endsection

@@ -37,17 +37,16 @@ class TeacherController extends Controller
      * @return RedirectResponse
      */
 
-//////////////////////////////////////////////////////////////////////////
+
 
     public function store(TeacherRequest $request)
     {
         $validated = $request->validated();
         Teacher::create($validated);
-        $request->session()->regenerate();
         return back()->with('success', "Successful");
     }
 
-//////////////////////////////////////////////////////////////////////////
+
 
     public function list()
     {
@@ -55,7 +54,7 @@ class TeacherController extends Controller
         return view('dashboard.admin.teachers.list' ,['teachers' => $teachers]);
     }
 
-//////////////////////////////////////////////////////////////////////////
+
 
     public function show($id)
     {
@@ -64,20 +63,17 @@ class TeacherController extends Controller
         return view('dashboard.admin.teachers.edit' , ['info' => $info]);
     }
 
-//////////////////////////////////////////////////////////////////////////
+
 
     public function update(TeacherRequest $request ,$id)
     {
         $validated = $request->validated();
-
         $info = Teacher::findorfail($id);
         $info -> update($validated);
-
-        $request->session()->regenerate();
         return redirect('/dashboard/admin/teachers/list')->with('success', "Successful");
     }
 
-//////////////////////////////////////////////////////////////////////////
+
 
     public function destroy($id)
     {

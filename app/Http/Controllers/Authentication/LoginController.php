@@ -38,7 +38,7 @@ class LoginController extends Controller
     {
 
         if($user->isAdmin()) {
-            return redirect(route('dashboard/admin'));
+            return ('you are not admin');
         }
 
         else if($user->isTeacher()) {

@@ -27,6 +27,7 @@ class AdminAuthenticated​
 
             else if ( Auth::user()->isTeacher() ) {
                 return redirect('dashboard/teacher');
+
             }
 
             else if ( Auth::user()->isStudent() ) {

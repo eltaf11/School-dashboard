@@ -13,6 +13,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use function back;
 use function view;
 
@@ -44,11 +45,13 @@ class StudentController extends Controller
     public function store(StudentRequest $request)
     {
         $validated = $request->validated();
-        $student = Student::create($validated);
+        DB::transaction(function () use ($validated , $request){
 
-        $course = Course::find([2,3]);
-        $student->courses()->attach($course);
+            $student = Student::create($validated);
+            $course = Course::find([1,2]);
+            $student->courses()->attach($course);
 
+        });
         return back()->with('success', "Successful");
     }
 

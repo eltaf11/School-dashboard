@@ -27,12 +27,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('/login'   , [LoginController::class,    'Login'])->name('login');
     Route::get ('/logout'  , [LogoutController::class,   'Logout']);
 
-    Route::prefix('dashboard')->middleware('auth')->group(function ()
+    Route::prefix('dashboard')->middleware( 'auth'  )->group(function ()
     {
         Route::get('/',        [DashboardController::class , 'show']);
-        Route::get('/admin',   [DashboardController::class , 'admin']);
-        Route::get('/student', [DashboardController::class , 'student']);
-        Route::get('/teacher', [DashboardController::class , 'teacher']);
+        Route::get('/admin',   [DashboardController::class , 'admin'])->middleware('admin');
+        Route::get('/student', [DashboardController::class , 'student'])->middleware('student');
+        Route::get('/teacher', [DashboardController::class , 'teacher'])->middleware('teacher');
 
         Route::prefix('admin/students')->group(function () {
             Route::get ('/add',         [StudentController::class , 'create']);

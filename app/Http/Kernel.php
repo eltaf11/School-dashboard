@@ -66,6 +66,9 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminAuthenticated​::class,
         'teacher'  => \App\Http\Middleware\TeacherAuthentication::class,
         'student'  => \App\Http\Middleware\StudentAuthentication::class,
-        'role'  => \App\Http\Middleware\RoleAuthentication::class
+//        'role'  => \App\Http\Middleware\RoleAuthentication::class,
+//        'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+//        'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+//        'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
     ];
 }
