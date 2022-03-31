@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'confirm_password',
-        'role'
+        'is_admin',
     ];
 
 
@@ -52,17 +52,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function isAdmin() {
-        return $this->role === 'Admin';
-    }
 
-    public function isTeacher() {
-        return $this->role === 'Teacher';
-    }
-
-    public function isStudent() {
-        return $this->role === 'Student';
-    }
 
 
 

@@ -62,17 +62,17 @@
     <div class="row">
 
         <!-- Sidear -->
-        @include('dashboard.admin.admin-sidebar')
+        @include('dashboard.admin.sidebar')
         <!-- Sidear -->
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <h1>Welcome Admin</h1>
             <br>
-{{--            @include('dashboard.carts')--}}
+            @if (\Request::is('*/admin'))
+                @include('dashboard.admin.carts')
+            @endif
             @yield('content')
         </main>
-
-
     </div>
 </div>
 

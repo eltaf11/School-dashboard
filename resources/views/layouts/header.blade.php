@@ -82,7 +82,11 @@
     <a href="#contact">Contact</a>
 
     <a href="#about">About</a>
-    @if(Route::has('login'))
+
+
+
+
+@if(Route::has('login'))
         @auth
             <a style="padding-left: 260px;" class="" href="/logout">Logout</a>
         @else
@@ -93,6 +97,15 @@
         @endauth
     @endif
 
-
-
 </div>
+
+{{--<form action="{{ route('search') }}" class="get">--}}
+{{--    <div>--}}
+{{--        <input type="text" class="form-control form-control-primary w-80" name="search" placeholder="Search..." style="text-align: center;">--}}
+{{--        <a class="btn btn-primary" href="/dashboard/admin/posts/search" style="background-color: #282d32; border-color: #282d32; display: block;">Search</a>--}}
+{{--    </div>--}}
+{{--</form>--}}
+
+
+
+

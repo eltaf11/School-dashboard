@@ -1,4 +1,4 @@
-@extends('dashboard.admin.dashboard-admin')
+@extends('dashboard.admin.dashboard')
 @section('content')
 
             <h2>Add Teacher</h2>
@@ -8,7 +8,7 @@
                 @csrf
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="form-title"><span>Teacher Information</span></h4>
+                        <h4 class="form-title"><span>Teacher's Information</span></h4>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group">

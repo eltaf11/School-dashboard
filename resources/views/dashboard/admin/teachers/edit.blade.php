@@ -1,4 +1,4 @@
-@extends('dashboard.admin.dashboard-admin')
+@extends('dashboard.admin.dashboard')
 @section('content')
 
     <h2>Add Teacher</h2>

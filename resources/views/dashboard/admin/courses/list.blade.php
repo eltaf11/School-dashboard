@@ -1,4 +1,4 @@
-@extends('dashboard.admin.dashboard-admin')
+@extends('dashboard.admin.dashboard')
 @section('content')
 
     <h3>Courses</h3>
@@ -23,7 +23,6 @@
                     <td>{{$courses -> unit}}</td>
 
                     <td>
-                        <a href="course_registered/{{$courses -> id}}" style="background-color: #8b8b8b; color: black; border: none" class="btn btn-primary">Registered Students</a>
                         <a href="edit/{{$courses -> id}}" style="background-color: #8b8b8b; color: black; border: none" class="btn btn-primary">Edit</a>
                         <a href="delete/{{$courses ->id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">Delete</a>
                     </td>

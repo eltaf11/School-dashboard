@@ -64,7 +64,6 @@ class StudentController extends Controller
     public function show($id)
     {
         $students = Student::findorfail($id);
-
         return view('dashboard.admin.students.edit', ['students' => $students]);
     }
 

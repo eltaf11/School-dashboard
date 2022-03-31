@@ -1,11 +1,11 @@
-@extends('dashboard.admin.dashboard-admin')
+@extends('dashboard.admin.dashboard')
 @section('content')
 
     <form action="{{ route('student') }}" method="post">
         @csrf
         <div class="row">
             <div class="col-12">
-                <h4 class="form-title"><span>Student Information</span></h4>
+                <h4 class="form-title"><span>Student's Information</span></h4>
             </div>
             <div class="col-12 col-sm-6">
                 <div class="form-group">

@@ -4,9 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
-class StudentAuthentication
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -17,22 +17,11 @@ class StudentAuthentication
      */
     public function handle(Request $request, Closure $next)
     {
-        if( Auth::check() )
-        {
+        if (Auth::user() &&  Auth::user()->is_admin === 'admin') {
 
-            if ( Auth::user()->isAdmin() ) {
-                return redirect('dashboard/admin');
-            }
-
-            else if ( Auth::user()->isTeacher() ) {
-                return redirect('dashboard/teacher');
-            }
-
-            else if ( Auth::user()->isStudent() ) {
-                return $next($request);
-            }
+            return $next($request);
         }
 
-        abort(404);  // for other user throw 404 error
+        return redirect('home')->with('error','You have not admin access');
     }
 }

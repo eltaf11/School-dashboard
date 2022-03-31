@@ -5,6 +5,8 @@ use App\Http\Controllers\Authentication\LogoutController;
 use App\Http\Controllers\Authentication\RegisterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -20,19 +22,20 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-    Route::get ('/home' , function (){return view('home');});
+    Route::get ('/home' ,    [HomeController::class, 'show']);
+
     Route::get ('/register', [RegisterController::class, 'Show']);
     Route::post('/register', [RegisterController::class, 'Register'])->name('register');
     Route::get ('/login'   , [LoginController::class,    'Show']);
     Route::post('/login'   , [LoginController::class,    'Login'])->name('login');
     Route::get ('/logout'  , [LogoutController::class,   'Logout']);
 
-    Route::prefix('dashboard')->middleware( 'auth'  )->group(function ()
+    Route::prefix('dashboard')->middleware( ['auth' , 'admin'] )->group(function ()
     {
         Route::get('/',        [DashboardController::class , 'show']);
-        Route::get('/admin',   [DashboardController::class , 'admin'])->middleware('admin');
-        Route::get('/student', [DashboardController::class , 'student'])->middleware('student');
-        Route::get('/teacher', [DashboardController::class , 'teacher'])->middleware('teacher');
+        Route::get('/admin',   [DashboardController::class , 'admin']);
+        Route::get('/student', [DashboardController::class , 'student']);
+        Route::get('/teacher', [DashboardController::class , 'teacher']);
 
         Route::prefix('admin/students')->group(function () {
             Route::get ('/add',         [StudentController::class , 'create']);
@@ -61,9 +64,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             Route::post('/edit/{id}',   [CourseController::class , 'update']);
         });
 
-//        Route::get ('/courses/test' ,[CourseController::class, 'test_show']);
-//        Route::post('/courses/test' ,[CourseController::class, 'test_store'])->name('test');
-        Route::get ('/courses/last/{id}' ,[CourseController::class, 'test_id']);
+        Route::prefix('admin/posts')->group(function () {
+            Route::get ('/add',         [PostController::class , 'create']);
+            Route::post('/add',         [PostController::class , 'store'])->name('post');
+            Route::get ('/list',        [PostController::class , 'list']);
+            Route::get ('/search',      [PostController::class , 'search'])->name('search');
+            Route::get ('/edit/{id}',   [PostController::class , 'show']);
+            Route::post('/edit/{id}',   [PostController::class , 'update']);
+        });
 
     });
 

@@ -68,14 +68,18 @@
 
     </p>
 
-    <label for="role" class="floatLabel">Role</label>
-    <select name="role" class="form-control select">
-        <option></option>
-        <option>Admin</option>
-        <option>Teacher</option>
-        <option>Student</option>
-    </select>
-    <span class="help-block">{{ ($errors->has('role')) ? $errors->first('role') : ''}}</span>
+    <p>
+        <label>Role</label>
+        <select name="is_admin" class="floatLabel">
+            <option></option>
+            <option>Admin</option>
+            <option>Student</option>
+            <option>Teacher</option>
+        </select>
+        <span class="help-block">{{ ($errors->has('is_admin')) ? $errors->first('is_admin') : ''}}</span>
+
+    </p>
+
     <br>
     <p>
         <input type="submit" value="Create Account" id="submit">
@@ -88,8 +92,7 @@
         </div>
     @endif
 
-
-
 </form>
+
 
 @endsection

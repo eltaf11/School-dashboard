@@ -20,6 +20,7 @@ class CourseController extends Controller
         return view('dashboard.admin.courses.add');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -66,26 +67,6 @@ class CourseController extends Controller
         return back()->with('success' , 'Course has been deleted');
     }
 
-
-//    public function test_show()
-//    {
-//        return view('dashboard.admin.test');
-//    }
-//
-//
-//    public function test_store(CourseStudentRequest $request)
-//    {
-//        $validated = $request->validated();
-//        StudentCourse::create($validated);
-//        $request->session()->regenerate();
-//        return back()->with('success' , "Successful");
-//    }
-//
-    public function test_id($id)
-    {
-        $test = StudentCourse::all();
-
-    }
 
 
 }
