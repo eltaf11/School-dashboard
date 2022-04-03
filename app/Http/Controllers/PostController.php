@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CourseRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Course;
 use App\Models\Post;
@@ -25,14 +24,38 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        Post::create($request);
+        $validated = $request->validated();
+        Post::create($validated);
         $request->session()->regenerate();
         return back()->with('success', "Successful");
+
     }
 
     public function list() {
         $posts = Post::all();
         return view('dashboard.admin.posts.list' , ['posts' => $posts]);
+    }
+
+    public function show($id)
+    {
+        $posts = Post::findorfail($id);
+        return view('dashboard.admin.posts.edit' , ['posts' => $posts]);
+    }
+
+    public function update(PostRequest $request ,$id)
+    {
+        $validated = $request->validated();
+        $posts = Post::findorfail($id);
+        $posts -> update($validated);
+        $request->session()->regenerate();
+        return redirect('/dashboard/admin/posts/list')->with('success', "Successful");
+    }
+
+    public function destroy($id)
+    {
+        $posts = Post::findorfail($id);
+        $posts -> delete();
+        return back()->with('success' , 'post has been deleted');
     }
 
 

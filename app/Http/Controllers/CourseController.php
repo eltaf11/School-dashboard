@@ -7,6 +7,7 @@ use App\Http\Requests\CourseStudentRequest;
 use App\Http\Requests\StudentRequest;
 use App\Models\Course;
 use App\Models\CourseStudent;
+use App\Models\Post;
 use App\Models\Student;
 use App\Models\StudentCourse;
 use App\Models\User;
@@ -30,7 +31,8 @@ class CourseController extends Controller
 
     public function store(CourseRequest $request)
     {
-        Course::create($request);
+        $validated = $request->validated();
+        Course::create($validated);
         $request->session()->regenerate();
         return back()->with('success', "Successful");
     }
@@ -51,8 +53,9 @@ class CourseController extends Controller
 
     public function update(CourseRequest $request ,$id)
     {
+        $validated = $request->validated();
         $course = Course::findorfail($id);
-        $course -> update($request);
+        $course -> update($validated);
         $request->session()->regenerate();
         return redirect('/dashboard/admin/courses/list')->with('success', "Successful");
     }

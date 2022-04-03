@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function show() {
 
-        $posts = Post::all()->first();
+        $posts = Post::all();
 
         return view('home' , ['posts' => $posts]);
     }

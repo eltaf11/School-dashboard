@@ -70,7 +70,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             Route::get ('/add',         [PostController::class , 'create']);
             Route::post('/add',         [PostController::class , 'store'])->name('post');
             Route::get ('/list',        [PostController::class , 'list']);
-            Route::get ('/search',      [PostController::class , 'search'])->name('search');
+            Route::get ('/delete/{id}', [PostController::class , 'destroy']);
             Route::get ('/edit/{id}',   [PostController::class , 'show']);
             Route::post('/edit/{id}',   [PostController::class , 'update']);
         });

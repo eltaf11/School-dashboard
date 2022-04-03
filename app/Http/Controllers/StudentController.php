@@ -75,8 +75,9 @@ class StudentController extends Controller
 
     public function update(StudentRequest $request, $id)
     {
+        $validated = $request->validated();
         $info = Student::findorfail($id);
-        $info->update($request);
+        $info->update($validated);
 
         $request->session()->regenerate();
         return redirect('/dashboard/admin/students/list')->with('success', "Successful");

@@ -40,13 +40,15 @@
                     </li>
                 </ul>
             </div>
+
             <div class="col-sm-10">
-                <h2>{{$posts->title}}</h2>
-                <p>{{$posts->body}}</p>
-                <br>
-                <h2>{{$posts->title}}</h2>
-                <p>{{$posts->body}}</p>
+                @foreach($posts as $post)
+                    <h2>{{$post->title}}</h2>
+                    <p>{{$post->body}}</p>
+                    <br>
+                @endforeach
             </div>
+
         </div>
     </div>
 

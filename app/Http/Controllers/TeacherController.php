@@ -39,7 +39,8 @@ class TeacherController extends Controller
 
     public function store(TeacherRequest $request)
     {
-        Teacher::create($request);
+        $validated = $request->validated();
+        Teacher::create($validated);
         return back()->with('success', "Successful");
     }
 
@@ -60,8 +61,9 @@ class TeacherController extends Controller
 
     public function update(TeacherRequest $request ,$id)
     {
+        $validated = $request->validated();
         $info = Teacher::findorfail($id);
-        $info -> update($request);
+        $info -> update($validated);
         return redirect('/dashboard/admin/teachers/list')->with('success', "Successful");
     }
 
