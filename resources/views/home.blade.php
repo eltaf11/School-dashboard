@@ -27,17 +27,14 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-2" style="border-right: solid 1px gray ">
-                <h2>Topics</h2>
+                <h4>Top Lectures</h4>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Topic 1</a>
+                    @foreach($posts as $post)
+                    <li class="nav-item" style="border-bottom: 3px solid #f4f4f5">
+                        <a class="nav-link " href="#">{{$post->title}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Topic 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Topic 3</a>
-                    </li>
+                    @endforeach
+
                 </ul>
             </div>
 
