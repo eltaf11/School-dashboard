@@ -16,5 +16,17 @@ class HomeController extends Controller
 
 
 
+public function search(Request $request) {
+        if($request->isMethod('post'))
+        {
+            $search = $request->get('name');
+            $searchResults = Post::where('title' ,'LIKE' , '%'.$search.'%')->get();
+
+        }
+    return view('search' , ['searchResults' => $searchResults]);
+}
+
+
+
 
 }

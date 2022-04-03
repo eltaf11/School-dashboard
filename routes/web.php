@@ -24,6 +24,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     Route::get ('/home' ,    [HomeController::class, 'show']);
 
+    Route::post ('/search' ,    [HomeController::class, 'search']);
+
     Route::get ('/register', [RegisterController::class, 'Show']);
     Route::post('/register', [RegisterController::class, 'Register'])->name('register');
     Route::get ('/login'   , [LoginController::class,    'Show']);
@@ -74,7 +76,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         });
 
     });
-
 
 });
 

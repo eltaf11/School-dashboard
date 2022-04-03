@@ -44,14 +44,20 @@ class StudentController extends Controller
 
     public function store(StudentRequest $request)
     {
-        $validated = $request->validated();
-        DB::transaction(function () use ($validated , $request){
+        DB::beginTransaction();
 
-            $student = Student::create($validated);
+        try {
+            $student = Student::create($request->all());
             $course = Course::find([1,2]);
             $student->courses()->attach($course);
 
-        });
+            DB::commit();
+            // all good
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        }
+
         return back()->with('success', "Successful");
     }
 
@@ -69,10 +75,8 @@ class StudentController extends Controller
 
     public function update(StudentRequest $request, $id)
     {
-        $validated = $request->validated();
-
         $info = Student::findorfail($id);
-        $info->update($validated);
+        $info->update($request);
 
         $request->session()->regenerate();
         return redirect('/dashboard/admin/students/list')->with('success', "Successful");

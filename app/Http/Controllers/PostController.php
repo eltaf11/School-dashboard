@@ -25,8 +25,7 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        $validated = $request->validated();
-        Post::create($validated);
+        Post::create($request);
         $request->session()->regenerate();
         return back()->with('success', "Successful");
     }
@@ -36,17 +35,5 @@ class PostController extends Controller
         return view('dashboard.admin.posts.list' , ['posts' => $posts]);
     }
 
-//    public function search(Request $request){
-//        // Get the search value from the request
-//        $search = $request->input('search');
-//
-//        // Search in the title and body columns from the posts table
-//        $posts = Post::query()
-//            ->where('title', 'LIKE', "%{$search}%")
-//            ->orWhere('body', 'LIKE', "%{$search}%")
-//            ->get();
-//        // Return the search view with the resluts compacted
-////        return view('search', compact('posts'));
-//        return $posts;
-//    }
+
 }

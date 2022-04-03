@@ -30,8 +30,7 @@ class CourseController extends Controller
 
     public function store(CourseRequest $request)
     {
-        $validated = $request->validated();
-        Course::create($validated);
+        Course::create($request);
         $request->session()->regenerate();
         return back()->with('success', "Successful");
     }
@@ -52,9 +51,8 @@ class CourseController extends Controller
 
     public function update(CourseRequest $request ,$id)
     {
-        $validated = $request->validated();
         $course = Course::findorfail($id);
-        $course -> update($validated);
+        $course -> update($request);
         $request->session()->regenerate();
         return redirect('/dashboard/admin/courses/list')->with('success', "Successful");
     }
