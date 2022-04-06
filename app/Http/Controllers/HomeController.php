@@ -10,23 +10,23 @@ class HomeController extends Controller
     public function show() {
 
         $posts = Post::orderBy('title' , 'ASC')->limit(3)->get();
-
-        return view('home' , ['posts' => $posts]);
+        return view('home.home' , ['posts' => $posts]);
     }
 
+    public function singlePost($id) {
 
+        $post = Post::findorfail($id);
+        return view('home.singlePost' , ['post'=>$post]);
+    }
 
-public function search(Request $request) {
+    public function search(Request $request) {
+
         if($request->isMethod('post'))
         {
             $search = $request->get('name');
             $searchResults = Post::where('title' ,'LIKE' , '%'.$search.'%')->get();
-
         }
-    return view('search' , ['searchResults' => $searchResults]);
-}
-
-
-
+        return view('home.searchResult' , ['searchResults' => $searchResults]);
+    }
 
 }

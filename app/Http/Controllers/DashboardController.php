@@ -21,9 +21,11 @@ class DashboardController extends Controller
         $studentNumber =  Student::count('id');
         $teacherNumber =  Teacher::count('id');
         $courseNumber  =  Course::count('id');
+        $user          =  User::all();
         return view('dashboard.admin.dashboard' , ['studentNumber' => $studentNumber ,
-                                                               'teacherNumber' => $teacherNumber ,
-                                                               'courseNumber'  => $courseNumber]);
+                                                         'teacherNumber' => $teacherNumber ,
+                                                         'courseNumber'  => $courseNumber ,
+                                                         'user'          => $user]);
     }
 
     public function student()

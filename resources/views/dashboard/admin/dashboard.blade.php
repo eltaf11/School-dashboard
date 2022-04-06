@@ -37,21 +37,60 @@
     main .card {
         margin-bottom: 20px;
     }
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        padding-right: 80px;
+    }
+    .dropdown-content {
+        display: none;
+        position: fixed;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
 </style>
 
 <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow" style="background-color: #282d32 !important; height: 60px ">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0"  style="background-color: #282d32">Admin Dashboard</a>
-    <input type="text" class="form-control form-control-primary w-80" placeholder="Search..." >
-    <a class="btn btn-primary" href="#" style="background-color: #282d32; border-color: #282d32; ">Search</a>
 
-    <div class="nav-item nav-link dropdown-toggle mr-md-2 dropdown" >
-        <a style="border: none #282d32;background-color: #282d32; box-shadow: none" class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            You
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
-            <a class="dropdown-item" href="#">Name</a>
-            <a class="dropdown-item" href="#">Email</a>
-            <a class="dropdown-item" href="/home">Logout</a>
+    <div class="dropdown">
+        <button class="dropbtn">You
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+
+            <a href="#">Name</a>
+            <a href="#">Email</a>
+            <a href="#">Role</a>
+
         </div>
     </div>
 </nav>

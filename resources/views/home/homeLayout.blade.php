@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,32 +13,26 @@
 
 @include('layouts.header')
 
+<form action="/search" method="post">
+    {{csrf_field()}}
+    <div style="display: flex">
+        <input type="text" class="form-control form-control-primary w-80" name="name"  placeholder="search..." style="width: 93%"/>
+        <input type="submit" value="search" style="width: 7%; background-color: #282d32; color: #FFFFFF; padding: 3px"/>
+    </div>
+</form>
+
 <body>
-
-
 <div class="container mt-5">
     <div class="row">
-        <h2>Results</h2>
-        <br><br><br>
-        @foreach($searchResults as $searchResult)
-        <div class="col-sm-12">
-           <a style="color: black; text-decoration: none" href="/home"> <h4>{{$searchResult->title}}</h4></a>
-           <span style="display: block;width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><a>{{$searchResult->body}}</a></span>
-            <hr>
-        </div>
 
-        @endforeach
+        @yield('post')
+
     </div>
 </div>
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<br><br>
 @include('layouts.footer')
-
 </body>
 </html>
-
 
 
 

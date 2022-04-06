@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-    Route::get ('/home' ,    [HomeController::class, 'show']);
-
-    Route::post ('/search' ,    [HomeController::class, 'search']);
+    Route::get  ('/home' ,       [HomeController::class,  'show']);
+    Route::get  ('/post/{id}',   [HomeController::class , 'singlePost']);
+    Route::post ('/search' ,     [HomeController::class,  'search']);
 
     Route::get ('/register', [RegisterController::class, 'Show']);
     Route::post('/register', [RegisterController::class, 'Register'])->name('register');

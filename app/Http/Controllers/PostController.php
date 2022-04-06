@@ -36,6 +36,7 @@ class PostController extends Controller
         return view('dashboard.admin.posts.list' , ['posts' => $posts]);
     }
 
+
     public function show($id)
     {
         $posts = Post::findorfail($id);
