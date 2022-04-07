@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function show() {
 
-        $posts = Post::orderBy('title' , 'ASC')->limit(3)->get();
+        $posts = Post::latest('title')->limit(3)->get();
         return view('home.home' , ['posts' => $posts]);
     }
 

@@ -26,7 +26,6 @@
                         <td>
                             <a href="edit/{{$student -> id}}" style="background-color: #8b8b8b; color: black; border: none" class="btn btn-primary">Edit</a>
                             <a href="delete/{{$student->id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">Delete</a>
-                            <a href="/dashboard/courses/last/{{$student -> id}}" style="background-color: #8b8b8b; border: none; color: black" class="btn btn-danger">test</a>
                         </td>
                     </tr>
                     </tbody>

@@ -30,6 +30,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('/register', [RegisterController::class, 'Register'])->name('register');
     Route::get ('/login'   , [LoginController::class,    'Show']);
     Route::post('/login'   , [LoginController::class,    'Login'])->name('login');
+
     Route::get ('/logout'  , [LogoutController::class,   'Logout']);
 
     Route::prefix('dashboard')->middleware( ['auth' , 'admin'] )->group(function ()
